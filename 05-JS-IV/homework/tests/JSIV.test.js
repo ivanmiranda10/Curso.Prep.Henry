@@ -211,12 +211,12 @@ describe('sumarLikesDeUsuario(user)', function() {
   });
 });
 
-describe('agregarMetodoCalculoDescuento(storeItem)', function() {
-  const storeItem = {
-    precio: 80,
-    porcentajeDeDescuento: 0.1,
-  };
-  const storeItem2 = {
+describe('agregarMetodoCalculoDescuento(storeItem)', function() {  // se crea un objeto, que tiene como propiedad un precio y un
+  const storeItem = {                                             // porcentaje de descuento
+    precio: 80, // precio del producto                           // tengo que devolver el total a pagar
+    porcentajeDeDescuento: 0.1, // descuento a realizar
+  };                           //  precio total = precio - descuento
+  const storeItem2 = {        //                       (precio * descuento)
     precio: 5,
     porcentajeDeDescuento: 0.5,
   };
