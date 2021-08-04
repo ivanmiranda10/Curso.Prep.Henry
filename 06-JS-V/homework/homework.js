@@ -9,12 +9,12 @@ function crearUsuario() {
   // Devuelve la clase
   // Tu código:
   class Usuario {
-    constructor (opciones) {
-      this.usuario = opciones.usuario,
+    constructor (opciones) { // el constructor acepta un objeto llamado "opciones"
+      this.usuario = opciones.usuario
       this.nombre = opciones.nombre,
       this.email = opciones.email,
       this.password = opciones.password
-    }
+    } // this hace referencia a cada uno de los objetos creados por el constructor
     saludar () {
       return 'Hola, mi nombre es ' + this.nombre;
     }
@@ -38,13 +38,23 @@ function agregarStringInvertida() {
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
   String.prototype.reverse = function() {
-    var stringInvertida = '';
-    for(var i = this.length - 1; i>=0; i--) {
-      stringInvertida = stringInvertida + this.charAt(i);
-    }
-    return stringInvertida;
+    var stringInvertida = []; // que empieze como un array y despues lo convertimos otra vez a string, para hacerlo mas facil
+    for(var i = 0; i < this.length; i++) { // iteramos en un for, que empieze desde la 1era letra, y que se ejecute hasta el final de la string
+      stringInvertida.unshift(this[i]) // empuja los elementos que le pasemos siempre al principio de la matriz
+    }                                 //  1ero la T [t]
+                                     //   2do la o [ot]
+                                    //    3ero la n [not]
+                                   //     4to la i [inot]      
+    return stringInvertida.join(''); // .join concatena los elementos de una matriz y los convierte a string, las '' son para que los caracteres esten juntos, sin separacion de coma -> "inot"
   };
-}
+  // String.prototype.reverse = function() {
+   // var stringInvertida = '';
+   // for(var i = this.length - 1; i>=0; i--) {
+   //   stringInvertida = stringInvertida + this.charAt(i);
+    }
+   // return stringInvertida;
+ // };
+//}
 
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
